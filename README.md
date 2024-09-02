@@ -1,6 +1,6 @@
 <h1>React Food Order App</h1>
 <video controls>
-    <source src="[videos/demo.mp4](https://github.com/GowthamSelvaraj123/ReactFoodOrderApp/blob/main/React%20FoodOrder.webm)" type="video/mp4">
+    <source src="https://raw.githubusercontent.com/GowthamSelvaraj123/ReactFoodOrderApp/main/React%20FoodOrder.webm" type="video/webm">
     Your browser does not support the video tag.
 </video>
 <p>This is a simple food order application built with React, showcasing the use of React Hooks, custom hooks, and <code>useContext</code> for state management. The app interacts with an API to fetch and post data, allowing users to view and place orders for food items.</p>
