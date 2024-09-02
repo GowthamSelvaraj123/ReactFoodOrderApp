@@ -1,8 +1,11 @@
 <h1>React Food Order App</h1>
-<video controls>
-    <source src="https://raw.githubusercontent.com/GowthamSelvaraj123/ReactFoodOrderApp/main/React%20FoodOrder.webm" type="video/webm">
-    Your browser does not support the video tag.
-</video>
+<h2>Food List Page</h2>
+<img src="https://github.com/user-attachments/assets/93f2470f-50a6-488a-b20e-fdbeee7bbffe" />
+<h2>Cart Popup</h2>
+<img src="https://github.com/user-attachments/assets/a859edf4-a2d6-4120-a8bb-466bd931c9ac" />
+<h2>Checkout Popup</h2>
+<img src="https://github.com/user-attachments/assets/cc0bc388-2141-45a1-8f9f-dcd87bcd6766" />
+
 <p>This is a simple food order application built with React, showcasing the use of React Hooks, custom hooks, and <code>useContext</code> for state management. The app interacts with an API to fetch and post data, allowing users to view and place orders for food items.</p>
 
 <h2>Features</h2>
