@@ -1,0 +1,44 @@
+import { useEffect, useState, useCallback } from "react";
+
+async function sendHttpRequest(url, config) {
+  const response = await fetch(url, config);
+  const resData = await response.json();
+
+  if (!response.ok) {
+    throw new Error(resData.message || 'Something went wrong, failed to send request');
+  }
+  return resData;
+}
+
+export default function useHttp(url, config = {}, initialData = []) {
+  const [data, setData] = useState(initialData);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const sendRequest = useCallback(async function sendRequest(data) {
+    setIsLoading(true);
+    setError(null); // Reset error before sending request
+    try {
+      const resData = await sendHttpRequest(url, {...config, body:data} );
+      setData(resData);
+    } catch (error) {
+      setError(error.message || 'Something went wrong!');
+    } finally {
+      setIsLoading(false);
+    }
+  }, [url, JSON.stringify(config)]); // Stringify config to prevent unnecessary re-renders
+
+  useEffect(() => {
+    // Automatically send the request if it's a GET request or config is empty
+    if ((!config.method || (config.method === 'GET' || !config.method)) || !config) {
+      sendRequest();
+    }
+  }, [sendRequest]);
+
+  return {
+    data,
+    isLoading,
+    error,
+    sendRequest,
+  };
+}
